@@ -19,7 +19,7 @@ var cmd string
 
 func main() {
 
-	if len(os.Args) < 3 {
+	if len(os.Args) < 2 {
 		fmt.Printf("usage: go-watch [path] [options] [cli command]\n")
 		os.Exit(1)
 	}
@@ -31,10 +31,15 @@ func main() {
 		fmt.Println("\n\n $ go-watch [path] [options] [cli command]")
 		fmt.Println()
 		fmt.Println()
-		fmt.Println(" options: \n\n --ignore=\toptional ignore path pattern, example: ")
+		fmt.Println(" options: \n\n --ignore=\toptional ignore path pattern, example: --ignore=\\.git")
 		fmt.Println()
 		fmt.Println()
 		os.Exit(0)
+	}
+
+	if len(os.Args) < 3 {
+		fmt.Printf("usage: go-watch [path] [options] [cli command]\n")
+		os.Exit(1)
 	}
 
 	fmt.Println("Watching: " + p)
